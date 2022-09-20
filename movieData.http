@@ -1,0 +1,94 @@
+
+//API 1
+GET http://localhost:3000/movies/
+
+Response
+[
+  {
+    movieName: "Captain America: The First Avenger",
+  },
+
+  ...
+]
+
+###
+
+//API 2
+POST http://localhost:3000/movies/
+
+Request
+{
+  "directorId": 6,
+  "movieName": "Jurassic Park",
+  "leadActor": "Jeff Goldblum"
+}
+
+
+Response
+"Movie Successfully Added"
+###
+
+//API 3
+GET http://localhost:3000/movies/movieId/
+
+Response
+{
+  movieId: 12,
+  directorId: 3,
+  movieName: "The Lord of the Rings",
+  leadActor: "Elijah Wood",
+}
+
+###
+
+//API 4
+PUT http://localhost:3000/movies/movieId/
+
+Request
+{
+  "directorId": 24,
+  "movieName": "Thor",
+  "leadActor": "Christopher Hemsworth"
+}
+
+Response
+"Movie Details Updated"
+
+###
+
+//API 5
+DELETE http://localhost:3000/movies/movieId/
+
+Response
+"Movie Removed"
+
+###
+
+//API 6
+GET http://localhost:3000/direectors/
+
+Response
+[
+  {
+    directorId: 1,
+    directorName: "Joe Johnston",
+  },
+
+  ...
+]
+
+###
+
+//API 7
+GET http://localhost:3000/directors/directorId/movies/
+
+Response
+[
+  {
+    movieName: "Captain Marvel",
+  },
+
+  ...
+]
+
+###
