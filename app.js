@@ -27,13 +27,11 @@ const initializeDbAndServer = async () => {
 
 initializeDbAndServer();
 
-//converting json file to db
 const convertMovieAPI = (dbObject) => {
   return {
     movieName: dbObject.movie_name,
-    directorId: dbObject.directorId,
-    movie_name: dbObject.movieName,
-    lead_actor: dbObject.leadActor,
+    directorId: dbObject.director_id,
+    leadActor: dbObject.lead_actor,
   };
 };
 
@@ -52,40 +50,9 @@ app.get("/movies/", async (request, response) => {
 app.post("/movies/", async (request, response) => {
   const { directorId, movieName, leadActor } = request.body;
   const updateQuery = `
-    INSERT INTO 
-        movie (director_id,movie_name,lead_actor)
-    VALUES (${directorId}, "${movieName}", "${leadActor}");`;
-  const updateQueryResponse = await db.run(updateQuery);
+﻿  INSERT INTO 
+  movie (director_id,movie_name,lead_actor)
+  VALUES (${directorId}, "${movieName}", "${leadActor}");`;
+      const updateQueryResponse = await db.run(updateQuery);
   response.send("Movie Updated Successfully");
-});
-
-//API 3 Returns a movie based on the movie ID
-app.get("/movies/:movieId/", async (request, response) => {
-  const { movieId } = request.params;
-  const getMovieDetailsQuery = `
-    SELECT * 
-    FROM movie 
-    WHERE movie_id = ${movieId};`;
-  const getMovieDetailsQueryResponse = await db.get(getMovieDetailsQuery);
-  response.send(ConvertMovieDbAPI3(getMovieDetailsQueryResponse));
-});
-
-//API 4 Updates the details of a movie in the movie table based on the movie ID
-app.put("/movies/:movieId/", async (request, response) => {
-  //  const {};
-});
-
-//API 5 Deletes a movie from the movie table based on the movie ID
-app.delete("/movies/:movieId/", async (request, response) => {
-  //  const {};
-});
-
-//API 6 Returns a list of all directors in the director table
-app.get("/directors/", async (request, response) => {
-  //  const {};
-});
-
-//API 7 Returns a list of all movie names directed by a specific director
-app.get("/directors/:directorId/movies/", async (request, response) => {
-  //  const {};
 });
