@@ -29,8 +29,9 @@ initializeDbAndServer();
 
 const convertMovieAPI = (dbObject) => {
   return {
-    movieName: dbObject.movie_name,
+    movieId: dbObject.movie_id,
     directorId: dbObject.director_id,
+    movieName: dbObject.movie_name,
     leadActor: dbObject.lead_actor,
   };
 };
