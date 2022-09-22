@@ -15,6 +15,7 @@ Response
 
 //API 2
 POST http://localhost:3000/movies/
+Content-Type: application/json;
 
 Request
 {
@@ -43,6 +44,7 @@ Response
 
 //API 4
 PUT http://localhost:3000/movies/movieId/
+Content-Type: application/json;
 
 Request
 {
