@@ -1,9 +1,6 @@
 //API 1
 GET http://localhost:3000/movies/
 
-# {
-#     movieName: "Captain America: The First Avenger",
-#   }
 
 ###
 
@@ -17,7 +14,6 @@ Content-Type: application/json
   "leadActor": "Jeff Goldblum"
 }
 
-# Movie Successfully Added
 
 ###
 
@@ -25,13 +21,6 @@ Content-Type: application/json
 //API 3
 GET http://localhost:3000/movies/:movieId/
 
-
-# {
-#   movieId: 12,
-#   directorId: 3,
-#   movieName: "The Lord of the Rings",
-#   leadActor: "Elijah Wood",
-# }
 
 ###
 
@@ -54,8 +43,6 @@ Content-Type: application/json
 DELETE http://localhost:3000/movies/:movieId/
 
 
-# Movie Removed
-
 ###
 
 
@@ -63,17 +50,8 @@ DELETE http://localhost:3000/movies/:movieId/
 GET http://localhost:3000/directors/
 
 
-# {
-#     directorId: 1,
-#     directorName: "Joe Johnston",
-#   },
-
 ###
 
 
 //API 7
 GET http://localhost:3000/directors/:directorId/movies/
-
-# {
-#     movieName: "Captain Marvel",
-#   },
